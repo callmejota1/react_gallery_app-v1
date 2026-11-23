@@ -1,0 +1,194 @@
+body {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #3f4850;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 52px 0 40px;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.search-form {
+  max-width: 460px;
+  display: flex;
+  margin: 0 auto 32px;
+}
+
+.search-form button {
+  outline: none;
+  background-color: #2f6f9a;
+  border: none;
+  padding: 0px 15px;
+  border-radius: 0 0.35em 0.35em 0;
+  cursor: pointer;
+}
+
+input {
+  font-size: 1em;
+  width: 100%;
+  background-color: #edeff0;
+  padding: 10px 15px;
+  border: 3px solid #d7dbdf;
+  border-right: none;
+  border-radius: 0.35em 0 0 0.35em;
+  outline: none;
+}
+
+.main-nav li {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.main-nav a {
+  display: block;
+  background: #2f6f9a;
+  border-radius: 3px;
+  padding: 5px;
+  color: #fff;
+}
+
+.main-nav .active,
+.main-nav a:hover,
+.search-form button:hover {
+  background-color: #275270;
+}
+
+.photo-container ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.photo-container ul li {
+  width: 220px;
+  height: 165px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.photo-container ul img {
+  width: 100%;
+  transform: scale(1.25);
+  transition: transform 1.25s;
+}
+
+.photo-container li:hover img {
+  transform: scale(1.65);
+}
+
+.photo-container .not-found {
+  width: 100%;
+}
+
+@media only screen and (max-width: 767px)  {
+  body {
+    padding-top: 2em;
+  }
+
+  .photo-container li {
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 768px)  {
+  body {
+    padding-top: 4em;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: auto;
+  }
+
+  .main-nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-nav li {
+    margin: 10px;
+    width: 100px;
+  }
+}
+
+/* ---------- Personal additions ---------- */
+
+/* Hide content visually but keep it available to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Visible keyboard focus (the starter CSS removes outlines) */
+input:focus-visible {
+  border-color: #2f6f9a;
+}
+
+.search-form button:focus-visible,
+.main-nav a:focus-visible,
+a:focus-visible {
+  outline: 3px solid #f2a900;
+  outline-offset: 2px;
+}
+
+.main-nav a {
+  transition: background-color 0.2s;
+}
+
+.photo-container ul li {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.photo-container ul img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-container .not-found,
+.photo-container .loading {
+  height: auto;
+  box-shadow: none;
+}
+
+.photo-container .loading {
+  width: 100%;
+  font-size: 1.2em;
+}
+
+.photo-container p a {
+  color: #2f6f9a;
+  text-decoration: underline;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .photo-container ul img,
+  .main-nav a {
+    transition: none;
+  }
+
+  .photo-container li:hover img {
+    transform: scale(1.25);
+  }
+}
